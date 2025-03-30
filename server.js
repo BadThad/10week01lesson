@@ -39,5 +39,5 @@ app.post("/users", (req, res) => {
         lastName: req.body.lastName
     };
     users.push(newUser);
-    res.json({message: "New user successfully added"});
+    res.json({message: "New user added", user: newUser});
 } )
