@@ -52,3 +52,9 @@ app.put("/users/:id", (req, res) => {
   user.lastName = req.body.lastName || user.lastName;
   res.json({ message: "User successfully updated", user });
 });
+
+app.delete("/users/:id", (req, res) => {
+  const userId = parseInt(req.params.id);
+  users = users.filter((b) => b.id !== userId);
+  res.json({ message: "User deleted" });
+});
